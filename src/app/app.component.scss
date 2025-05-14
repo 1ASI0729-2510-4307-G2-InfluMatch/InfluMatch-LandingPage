@@ -1,0 +1,8 @@
+/* aquí puedes definir estilos globales para tu app, 
+   pero al ser toda la landing responsive y tematizada dentro de LandingComponent,
+   probablemente no necesites nada especial */
+:host {
+  display: block;
+  height: 100%;
+  margin: 0;
+}
