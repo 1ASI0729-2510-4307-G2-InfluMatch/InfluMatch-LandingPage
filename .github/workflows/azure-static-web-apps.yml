@@ -28,4 +28,4 @@ jobs:
           action: upload
           app_location: "/"
           api_location: ""
-          app_artifact_location: "dist/influ-match-landing-page" 
+          app_artifact_location: "dist/influ-match-landing-page/browser"  # Try with /browser
