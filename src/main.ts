@@ -12,7 +12,6 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { routes } from './app/app.routes'; // <-- tu archivo de rutas stand-alone
 import { AppComponent } from './app/app.component';
-import { CoreModule } from './app/core/core.module';
 
 // 🔧 Factory para ngx-translate
 export function createTranslateLoader(http: HttpClient) {
@@ -30,7 +29,6 @@ bootstrapApplication(AppComponent, {
     // 👉 Imports de módulos “clásicos” que aún necesitas
     importProvidersFrom(
       HttpClientModule,
-      CoreModule,
       TranslateModule.forRoot({
         loader: {
           provide: TranslateLoader,
