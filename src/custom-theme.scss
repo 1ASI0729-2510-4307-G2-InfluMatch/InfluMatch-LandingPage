@@ -1,0 +1,67 @@
+// 1) Core de Material (tipografía, ripples…)
+
+// 2) Definición de paletas de color con tus variables de marca
+$influ-match-primary: mat.define-palette(
+  mat.$indigo-palette,
+  500,
+  300,
+  700,
+  (
+    500: #2d46b9,
+  )
+);
+$influ-match-secondary: mat.define-palette(
+  mat.$blue-palette,
+  200,
+  100,
+  300,
+  (
+    200: #6c7ae0,
+  )
+);
+$influ-match-dark-primary: mat.define-palette(
+  mat.$indigo-palette,
+  800,
+  600,
+  900,
+  (
+    500: #1a2980,
+  )
+);
+$influ-match-dark-secondary: mat.define-palette(
+  mat.$blue-palette,
+  100,
+  50,
+  200,
+  (
+    200: #e6e9f7,
+  )
+);
+
+// 3) Definir themes claro y oscuro
+$influ-match-light-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $influ-match-primary,
+      accent: $influ-match-secondary,
+      warn: mat.$red-palette,
+    ),
+  )
+);
+$influ-match-dark-theme: mat.define-dark-theme(
+  (
+    color: (
+      primary: $influ-match-dark-primary,
+      accent: $influ-match-dark-secondary,
+      warn: mat.$red-palette,
+    ),
+  )
+);
+
+// 4) Aplicar theme claro por defecto
+@include mat.all-component-themes($influ-match-light-theme);
+
+// 5) Clase para activar theme oscuro
+.dark-mode {
+  @include mat.all-component-themes($influ-match-dark-theme);
+}
