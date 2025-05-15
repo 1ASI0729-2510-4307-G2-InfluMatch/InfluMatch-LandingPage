@@ -58,8 +58,8 @@
                   plan.price === 0
                     ? ("PLANS.FREE" | translate)
                     : billingPeriod === "yearly"
-                      ? (calculateYearlyPrice(plan.price) | number : "1.0-2")
-                      : plan.price
+                    ? (calculateYearlyPrice(plan.price) | number : "1.0-2")
+                    : plan.price
                 }}
               </span>
               <span class="period" *ngIf="plan.price !== 0">
@@ -89,8 +89,8 @@
               >
                 <div class="feature-icon">
                   <mat-icon>{{
-                      feature.highlighted ? "check_circle" : "check"
-                    }}</mat-icon>
+                    feature.highlighted ? "check_circle" : "check"
+                  }}</mat-icon>
                 </div>
                 <span>{{ feature.key | translate }}</span>
               </li>
