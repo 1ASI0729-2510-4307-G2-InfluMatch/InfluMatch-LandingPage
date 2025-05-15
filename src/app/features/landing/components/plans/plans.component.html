@@ -1,0 +1,119 @@
+<section class="plans-section" id="plans">
+  <div class="container">
+    <!-- Header -->
+    <div class="section-header" data-aos="fade-up">
+      <span class="overline">{{ "PLANS.OVERLINE" | translate }}</span>
+      <h2 class="section-title">{{ "PLANS.TITLE" | translate }}</h2>
+      <p class="section-subtitle">{{ "PLANS.SUBTITLE" | translate }}</p>
+    </div>
+
+    <!-- Billing Toggle -->
+    <div class="billing-toggle" data-aos="fade-up" data-aos-delay="100">
+      <div class="toggle-container">
+        <button
+          class="toggle-option"
+          [class.active]="billingPeriod === 'monthly'"
+          (click)="changeBillingPeriod('monthly')"
+        >
+          {{ "PLANS.MONTHLY" | translate }}
+        </button>
+        <button
+          class="toggle-option"
+          [class.active]="billingPeriod === 'yearly'"
+          (click)="changeBillingPeriod('yearly')"
+        >
+          {{ "PLANS.YEARLY" | translate }}
+          <span class="discount-badge">-20%</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Plans Grid -->
+    <div class="plans-grid">
+      <div
+        *ngFor="let plan of plans; let i = index"
+        class="plan-card"
+        [class.featured]="plan.popular"
+        [attr.data-aos]="'fade-up'"
+        [attr.data-aos-delay]="i * 100"
+      >
+        <div class="card-content">
+          <!-- Plan Header -->
+          <div class="plan-header">
+            <div class="plan-icon">
+              <mat-icon>{{ plan.icon }}</mat-icon>
+            </div>
+            <h3 class="plan-name">{{ plan.nameKey | translate }}</h3>
+            <p class="plan-description">
+              {{ plan.descriptionKey | translate }}
+            </p>
+          </div>
+
+          <!-- Plan Price -->
+          <div class="plan-price">
+            <div class="price-container">
+              <span class="currency" *ngIf="plan.price !== 0">$</span>
+              <span class="amount">
+                {{
+                  plan.price === 0
+                    ? ("PLANS.FREE" | translate)
+                    : billingPeriod === "yearly"
+                      ? (calculateYearlyPrice(plan.price) | number : "1.0-2")
+                      : plan.price
+                }}
+              </span>
+              <span class="period" *ngIf="plan.price !== 0">
+                /
+                {{
+                  billingPeriod === "yearly"
+                    ? ("PLANS.YEAR" | translate)
+                    : ("PLANS.MONTH" | translate)
+                }}
+              </span>
+            </div>
+            <div
+              class="price-note"
+              *ngIf="billingPeriod === 'yearly' && plan.price !== 0"
+            >
+              {{ "PLANS.SAVE" | translate }}
+              {{ calculateSavings(plan.price) | currency }}
+            </div>
+          </div>
+
+          <!-- Plan Features -->
+          <div class="plan-features">
+            <ul>
+              <li
+                *ngFor="let feature of plan.features"
+                [class.highlighted]="feature.highlighted"
+              >
+                <div class="feature-icon">
+                  <mat-icon>{{
+                      feature.highlighted ? "check_circle" : "check"
+                    }}</mat-icon>
+                </div>
+                <span>{{ feature.key | translate }}</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Plan CTA -->
+          <div class="plan-cta">
+            <button
+              mat-flat-button
+              [class.primary-button]="plan.popular"
+              [class.secondary-button]="!plan.popular"
+            >
+              {{ plan.ctaKey | translate }}
+            </button>
+          </div>
+        </div>
+
+        <!-- Popular Badge -->
+        <div class="popular-badge" *ngIf="plan.popular">
+          {{ "PLANS.POPULAR" | translate }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
