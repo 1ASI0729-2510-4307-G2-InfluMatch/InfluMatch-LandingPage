@@ -64,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "InfluMatch:build:production"
+              "buildTarget": "InfluMatch-LandingPage:build:production"
             },
             "development": {
-              "buildTarget": "InfluMatch:build:development"
+              "buildTarget": "InfluMatch-LandingPage:build:development"
             }
           },
           "defaultConfiguration": "development"
