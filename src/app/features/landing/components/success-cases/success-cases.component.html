@@ -1,0 +1,116 @@
+<section class="success-cases-section" id="success-cases">
+  <div class="container">
+    <div class="section-intro" data-aos="fade-up">
+      <span class="overline">{{ "SUCCESS_CASES.OVERLINE" | translate }}</span>
+      <h2 class="section-title">{{ "SUCCESS_CASES.TITLE" | translate }}</h2>
+      <p class="section-subtitle">{{ "SUCCESS_CASES.SUBTITLE" | translate }}</p>
+    </div>
+
+    <!-- Featured Case -->
+    <div class="featured-case" data-aos="fade-up">
+      <div class="featured-case-content">
+        <div class="featured-case-text">
+          <span class="case-category">{{
+              "SUCCESS_CASES.FEATURED_CATEGORY" | translate
+            }}</span>
+          <h3 class="case-title">
+            {{ "SUCCESS_CASES.FEATURED_TITLE" | translate }}
+          </h3>
+          <p class="case-description">
+            {{ "SUCCESS_CASES.FEATURED_DESC" | translate }}
+          </p>
+
+          <div class="case-metrics">
+            <div class="metric">
+              <span class="metric-value">+150%</span>
+              <span class="metric-label">{{
+                  "SUCCESS_CASES.GROWTH" | translate
+                }}</span>
+            </div>
+            <div class="metric">
+              <span class="metric-value">2.5M</span>
+              <span class="metric-label">{{
+                  "SUCCESS_CASES.REACH" | translate
+                }}</span>
+            </div>
+            <div class="metric">
+              <span class="metric-value">3.2x</span>
+              <span class="metric-label">{{
+                  "SUCCESS_CASES.ROI" | translate
+                }}</span>
+            </div>
+          </div>
+
+          <button mat-flat-button class="learn-more-btn">
+            {{ "SUCCESS_CASES.READ_MORE" | translate }}
+            <mat-icon>arrow_forward</mat-icon>
+          </button>
+        </div>
+        <div class="featured-case-image">
+          <img
+            src="../../../../../assets/images/featured-case.jpg"
+            alt="Featured success case"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Case Gallery -->
+    <div class="case-gallery">
+      <div class="gallery-header" data-aos="fade-up">
+        <h3>{{ "SUCCESS_CASES.GALLERY_TITLE" | translate }}</h3>
+        <p>{{ "SUCCESS_CASES.GALLERY_SUBTITLE" | translate }}</p>
+      </div>
+
+      <div class="gallery-grid">
+        <div
+          class="case-card"
+          *ngFor="let c of cases; let i = index"
+          [attr.data-aos]="'fade-up'"
+          [attr.data-aos-delay]="i * 100"
+        >
+          <div class="case-card-image">
+            <img [src]="c.image" [alt]="c.titleKey | translate" />
+            <div class="case-overlay">
+              <button
+                mat-icon-button
+                class="expand-btn"
+                aria-label="Expand case"
+              >
+                <mat-icon>fullscreen</mat-icon>
+              </button>
+            </div>
+          </div>
+          <div class="case-card-content">
+            <span class="case-category">{{ c.categoryKey | translate }}</span>
+            <h4>{{ c.titleKey | translate }}</h4>
+            <p>{{ c.descKey | translate }}</p>
+
+            <div class="case-stats">
+              <div class="stat" *ngFor="let stat of c.stats">
+                <span class="stat-value">{{ stat.value }}</span>
+                <span class="stat-label">{{ stat.label | translate }}</span>
+              </div>
+            </div>
+
+            <a class="read-more-link" [routerLink]="['/case', c.id]">
+              {{ "SUCCESS_CASES.READ_MORE" | translate }}
+              <mat-icon>arrow_forward</mat-icon>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-cta" data-aos="fade-up">
+        <button
+          mat-stroked-button
+          class="view-all-btn"
+          routerLink="/success-cases"
+        >
+          {{ "SUCCESS_CASES.VIEW_ALL" | translate }}
+          <mat-icon>arrow_forward</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
