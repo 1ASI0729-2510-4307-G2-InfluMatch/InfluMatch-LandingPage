@@ -1,0 +1,96 @@
+<footer class="footer">
+  <!-- Decorative wave element -->
+  <!-- <div class="footer-wave">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" preserveAspectRatio="none">
+      <path d="M0,50 C150,20 350,80 720,50 C1080,20 1290,80 1440,40 L1440,100 L0,100 Z" fill="currentColor"></path>
+    </svg>
+  </div> -->
+
+  <div class="footer-container">
+    <!-- Main Footer Content -->
+    <!-- <div class="footer-content"> -->
+    <!-- Brand Column -->
+    <div class="footer-brand">
+      <img
+        [src]="
+          isDark
+            ? 'assets/images/logo-dark.png'
+            : 'assets/images/logo-light.png'
+        "
+        alt="InfluMatch Logo"
+        class="footer-logo"
+      />
+      <p class="brand-description">{{ "FOOTER.ABOUT_TEXT" | translate }}</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-links">
+      <a routerLink="/">{{ "HEADER.HOME" | translate }}</a>
+      <a routerLink="/how-it-works">{{ "HEADER.HOW_IT_WORKS" | translate }}</a>
+      <a routerLink="/plans">{{ "HEADER.PLANS" | translate }}</a>
+      <a routerLink="/contact">{{ "HEADER.CONTACT" | translate }}</a>
+    </div>
+
+    <!-- Resources Links -->
+    <!-- <div class="footer-links">
+        <h3>{{ 'FOOTER.RESOURCES_TITLE' | translate }}</h3>
+        <ul>
+          <li><a href="#">{{ 'FOOTER.BLOG' | translate }}</a></li>
+          <li><a href="#">{{ 'FOOTER.HELP_CENTER' | translate }}</a></li>
+          <li><a href="#">{{ 'FOOTER.GUIDES' | translate }}</a></li>
+          <li><a href="#">{{ 'FOOTER.API_DOCS' | translate }}</a></li>
+          <li><a href="#">{{ 'FOOTER.COMMUNITY' | translate }}</a></li>
+        </ul>
+      </div> -->
+
+    <!-- Legal Links -->
+    <!-- <div class="footer-links">
+        <h3>{{ 'FOOTER.LEGAL_TITLE' | translate }}</h3>
+        <ul>
+          <li><a href="#">{{ 'FOOTER.PRIVACY' | translate }}</a></li>
+          <li><a href="#">{{ 'FOOTER.TERMS' | translate }}</a></li>
+          <li><a href="#">{{ 'FOOTER.COOKIES' | translate }}</a></li>
+          <li><a href="#">{{ 'FOOTER.COMPLIANCE' | translate }}</a></li>
+          <li><a href="#">{{ 'FOOTER.SECURITY' | translate }}</a></li>
+        </ul>
+      </div> -->
+
+    <!-- Contact Info -->
+    <div class="footer-contact">
+      <a href="mailto:{{ 'CONTACT.EMAIL_ADDRESS' | translate }}">{{
+        "CONTACT.EMAIL_ADDRESS" | translate
+      }}</a>
+      <div class="social-icons">
+        <a href="#" aria-label="Facebook" class="social-icon">
+          <mat-icon>facebook</mat-icon>
+        </a>
+        <a href="#" aria-label="Twitter" class="social-icon">
+          <mat-icon>twitter</mat-icon>
+        </a>
+        <a href="#" aria-label="Instagram" class="social-icon">
+          <mat-icon>instagram</mat-icon>
+        </a>
+      </div>
+    </div>
+    <!-- </div> -->
+
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+      <p>© {{ currentYear }} InfluMatch</p>
+      <div class="language-selector">
+        <button
+          [class.active]="currentLang === 'en'"
+          (click)="changeLang('en')"
+        >
+          EN
+        </button>
+        <button
+          [class.active]="currentLang === 'es'"
+          (click)="changeLang('es')"
+        >
+          ES
+        </button>
+      </div>
+    </div>
+  </div>
+</footer>

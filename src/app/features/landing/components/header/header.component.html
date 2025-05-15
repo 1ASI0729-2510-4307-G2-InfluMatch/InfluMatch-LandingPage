@@ -1,0 +1,155 @@
+<header
+  class="header"
+  [class.scrolled]="isScrolled"
+  [class.mobile-open]="isMobileMenuOpen"
+>
+  <!-- Glassmorphism overlay for scrolled state -->
+  <div class="header-backdrop"></div>
+
+  <div class="container">
+    <div class="header-content">
+      <!-- Logo -->
+      <div class="logo-container">
+        <a routerLink="/" class="logo-link" aria-label="InfluMatch Home">
+          <img
+            [src]="
+              isDark
+                ? '../../../../../assets/images/logo-light.png'
+                : '../../../../../assets/images/logo-dark.png'
+            "
+            alt="InfluMatch logo"
+            class="logo"
+          />
+        </a>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <nav class="nav-desktop">
+        <ul class="nav-links">
+          <li *ngFor="let item of navItems">
+            <a
+              [routerLink]="item.route"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: item.exact }"
+              (click)="scrollToSection(item.section)"
+              class="nav-link"
+            >
+              {{ item.label | translate }}
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <!-- Language Selector -->
+        <div class="language-selector">
+          <button
+            class="lang-btn"
+            [class.active]="currentLang === 'en'"
+            (click)="changeLang('en')"
+            aria-label="English"
+          >
+            EN
+          </button>
+          <div class="lang-divider"></div>
+          <button
+            class="lang-btn"
+            [class.active]="currentLang === 'es'"
+            (click)="changeLang('es')"
+            aria-label="Español"
+          >
+            ES
+          </button>
+        </div>
+
+        <!-- Theme Toggle -->
+        <button
+          class="theme-toggle"
+          (click)="toggleTheme()"
+          aria-label="Toggle theme"
+        >
+          <div class="toggle-track">
+            <div class="toggle-indicator" [class.dark]="isDark">
+              <mat-icon *ngIf="isDark">dark_mode</mat-icon>
+              <mat-icon *ngIf="!isDark">light_mode</mat-icon>
+            </div>
+          </div>
+        </button>
+
+        <!-- Mobile Menu Toggle -->
+        <button
+          class="mobile-toggle"
+          (click)="toggleMobileMenu()"
+          aria-label="Toggle mobile menu"
+        >
+          <div class="hamburger" [class.active]="isMobileMenuOpen">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Navigation -->
+  <div class="mobile-menu" [class.open]="isMobileMenuOpen">
+    <div class="mobile-menu-backdrop"></div>
+    <div class="container">
+      <nav class="nav-mobile">
+        <ul class="mobile-nav-links">
+          <li
+            *ngFor="let item of navItems; let i = index"
+            [style.animation-delay]="i * 0.05 + 's'"
+          >
+            <a
+              [routerLink]="item.route"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: item.exact }"
+              (click)="mobileNavClick(item.section)"
+              class="mobile-nav-link"
+            >
+              <mat-icon *ngIf="item.icon">{{ item.icon }}</mat-icon>
+              <span>{{ item.label | translate }}</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="mobile-actions">
+          <div class="mobile-language-selector">
+            <h4>{{ "HEADER.LANGUAGE" | translate }}</h4>
+            <div class="mobile-lang-buttons">
+              <button
+                class="mobile-lang-btn"
+                [class.active]="currentLang === 'en'"
+                (click)="changeLang('en')"
+              >
+                English
+              </button>
+              <button
+                class="mobile-lang-btn"
+                [class.active]="currentLang === 'es'"
+                (click)="changeLang('es')"
+              >
+                Español
+              </button>
+            </div>
+          </div>
+
+          <div class="mobile-theme-toggle">
+            <h4>{{ "HEADER.THEME" | translate }}</h4>
+            <button class="mobile-theme-btn" (click)="toggleTheme()">
+              <mat-icon>{{ isDark ? "light_mode" : "dark_mode" }}</mat-icon>
+              <span>{{
+                isDark
+                  ? ("HEADER.LIGHT_MODE" | translate)
+                  : ("HEADER.DARK_MODE" | translate)
+              }}</span>
+            </button>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
