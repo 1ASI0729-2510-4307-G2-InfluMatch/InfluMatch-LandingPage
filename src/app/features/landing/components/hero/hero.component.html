@@ -1,0 +1,117 @@
+<section class="hero-section">
+  <div class="hero-background">
+    <div class="gradient-overlay"></div>
+    <div class="pattern-overlay"></div>
+  </div>
+
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-text" data-aos="fade-up" data-aos-delay="100">
+        <span class="overline">{{ "HERO.OVERLINE" | translate }}</span>
+        <h1 class="hero-title">{{ "HERO.TITLE" | translate }}</h1>
+        <p class="hero-subtitle">{{ "HERO.SUBTITLE" | translate }}</p>
+
+        <div class="hero-actions">
+          <button
+            mat-flat-button
+            color="primary"
+            class="cta-button"
+            routerLink="/how-it-works"
+          >
+            {{ "HERO.CTA" | translate }}
+            <mat-icon>arrow_forward</mat-icon>
+          </button>
+          <button
+            mat-stroked-button
+            class="secondary-button"
+            routerLink="/plans"
+          >
+            {{ "HERO.SECONDARY_CTA" | translate }}
+          </button>
+        </div>
+
+        <div class="hero-badges">
+          <div class="badge" data-aos="fade-up" data-aos-delay="300">
+            <span class="badge-icon">
+              <mat-icon>verified</mat-icon>
+            </span>
+            <span class="badge-text">{{ "HERO.BADGE1" | translate }}</span>
+          </div>
+          <div class="badge" data-aos="fade-up" data-aos-delay="400">
+            <span class="badge-icon">
+              <mat-icon>bolt</mat-icon>
+            </span>
+            <span class="badge-text">{{ "HERO.BADGE2" | translate }}</span>
+          </div>
+          <div class="badge" data-aos="fade-up" data-aos-delay="500">
+            <span class="badge-icon">
+              <mat-icon>shield</mat-icon>
+            </span>
+            <span class="badge-text">{{ "HERO.BADGE3" | translate }}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual" data-aos="fade-left" data-aos-delay="200">
+        <div class="visual-container">
+          <div class="main-illustration">
+            <div class="hero-image-container">
+              <img
+                src="assets/images/hero-illustration.png"
+                alt="InfluMatch Platform"
+                class="hero-image"
+              />
+            </div>
+          </div>
+
+          <div class="floating-element floating-element-1">
+            <mat-icon>thumb_up</mat-icon>
+            <span>+500</span>
+          </div>
+          <div class="floating-element floating-element-2">
+            <mat-icon>star</mat-icon>
+            <span>4.9</span>
+          </div>
+          <div class="floating-element floating-element-3">
+            <mat-icon>trending_up</mat-icon>
+            <span>+200%</span>
+          </div>
+
+          <div class="glow-effect"></div>
+          <div class="dots-pattern"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-stats" data-aos="fade-up" data-aos-delay="600">
+      <div class="stat-item">
+        <div class="stat-value" data-count="10000">0</div>
+        <div class="stat-label">{{ "HERO.STAT_INFLUENCERS" | translate }}</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-value" data-count="5000">0</div>
+        <div class="stat-label">{{ "HERO.STAT_BRANDS" | translate }}</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-value" data-count="98">0</div>
+        <div class="stat-suffix">%</div>
+        <div class="stat-label">{{ "HERO.STAT_SATISFACTION" | translate }}</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-wave">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1440 320"
+      preserveAspectRatio="none"
+    >
+      <path
+        class="wave-path"
+        d="M0,192L48,176C96,160,192,128,288,122.7C384,117,480,139,576,160C672,181,768,203,864,197.3C960,192,1056,160,1152,154.7C1248,149,1344,171,1392,181.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+      ></path>
+    </svg>
+  </div>
+</section>
