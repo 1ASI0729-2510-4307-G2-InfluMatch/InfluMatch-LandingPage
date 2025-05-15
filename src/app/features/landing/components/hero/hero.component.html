@@ -16,7 +16,7 @@
             mat-flat-button
             color="primary"
             class="cta-button"
-            routerLink="/how-it-works"
+            (click)="openApp()"
           >
             {{ "HERO.CTA" | translate }}
             <mat-icon>arrow_forward</mat-icon>
@@ -24,7 +24,7 @@
           <button
             mat-stroked-button
             class="secondary-button"
-            routerLink="/plans"
+            (click)="openApp()"
           >
             {{ "HERO.SECONDARY_CTA" | translate }}
           </button>

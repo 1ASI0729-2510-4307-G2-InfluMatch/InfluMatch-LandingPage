@@ -32,6 +32,7 @@ export class HeroComponent implements OnInit, AfterViewInit, OnDestroy {
   private themeSubscription: Subscription | null = null;
   private countAnimationStarted = false;
   private observer: IntersectionObserver | null = null;
+  readonly appUrl = 'https://happy-stone-091814410.6.azurestaticapps.net/';
 
   constructor(
     private themeService: ThemeService,
@@ -71,6 +72,10 @@ export class HeroComponent implements OnInit, AfterViewInit, OnDestroy {
     if (this.observer) {
       this.observer.disconnect();
     }
+  }
+
+   openApp(): void {
+    window.open(this.appUrl, '_blank');
   }
 
   private setupStatCounters(): void {
