@@ -10,7 +10,7 @@ describe('SuccessCasesComponent', () => {
     await TestBed.configureTestingModule({
       imports: [SuccessCasesComponent]
     })
-      .compileComponents();
+    .compileComponents();
 
     fixture = TestBed.createComponent(SuccessCasesComponent);
     component = fixture.componentInstance;
