@@ -83,7 +83,11 @@ export class PlansComponent implements OnInit, AfterViewInit {
   toggleFaq(index: number): void {
     this.faqs[index].isOpen = !this.faqs[index].isOpen;
   }
+  readonly appUrl = 'https://happy-stone-091814410.6.azurestaticapps.net/';
 
+   openApp(): void {
+    window.open(this.appUrl, '_blank');
+  }
   private initializePlans(): void {
     this.plans = [
       {

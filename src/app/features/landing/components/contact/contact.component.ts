@@ -99,6 +99,26 @@ export class ContactComponent implements OnInit, AfterViewInit {
       },
     ];
   }
+  readonly appUrl = 'https://www.facebook.com';
+
+   openApp(): void {
+    window.open(this.appUrl, '_blank');
+  }
+  readonly appUrl1 = 'https://x.com/?lang=es';
+
+   openApp1(): void {
+    window.open(this.appUrl1, '_blank');
+  }
+    readonly appUrl2 = 'https://www.instagram.com/';
+
+   openApp2(): void {
+    window.open(this.appUrl2, '_blank');
+  }
+      readonly appUrl3 = 'https://www.linkedin.com/feed/';
+
+   openApp3(): void {
+    window.open(this.appUrl3, '_blank');
+  }
 
   toggleFaq(index: number): void {
     this.faqs[index].isOpen = !this.faqs[index].isOpen;

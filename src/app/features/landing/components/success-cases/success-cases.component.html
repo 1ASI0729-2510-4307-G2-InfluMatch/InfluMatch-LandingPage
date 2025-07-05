@@ -41,7 +41,7 @@
             </div>
           </div>
 
-          <button mat-flat-button class="learn-more-btn">
+          <button mat-flat-button class="learn-more-btn" (click)="openApp()">
             {{ "SUCCESS_CASES.READ_MORE" | translate }}
             <mat-icon>arrow_forward</mat-icon>
           </button>
@@ -76,6 +76,7 @@
                 mat-icon-button
                 class="expand-btn"
                 aria-label="Expand case"
+                (click)="openApp()"  
               >
                 <mat-icon>fullscreen</mat-icon>
               </button>
@@ -93,7 +94,7 @@
               </div>
             </div>
 
-            <a class="read-more-link" [routerLink]="['/case', c.id]">
+            <a class="read-more-link" (click)="openApp()">
               {{ "SUCCESS_CASES.READ_MORE" | translate }}
               <mat-icon>arrow_forward</mat-icon>
             </a>
@@ -106,6 +107,7 @@
           mat-stroked-button
           class="view-all-btn"
           routerLink="/success-cases"
+          (click)="openApp()"
         >
           {{ "SUCCESS_CASES.VIEW_ALL" | translate }}
           <mat-icon>arrow_forward</mat-icon>

@@ -87,7 +87,11 @@ export class HowItWorksComponent implements OnInit, OnDestroy {
   isDarkMode = false;
 
   constructor(private themeService: ThemeService) {}
+  readonly appUrl = 'https://happy-stone-091814410.6.azurestaticapps.net/';
 
+   openApp(): void {
+    window.open(this.appUrl, '_blank');
+  }
   ngOnInit(): void {
     // Subscribe to theme changes
     this.themeSubscription = this.themeService

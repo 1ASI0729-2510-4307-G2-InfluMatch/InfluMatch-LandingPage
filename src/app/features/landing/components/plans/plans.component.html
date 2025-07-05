@@ -103,6 +103,7 @@
               mat-flat-button
               [class.primary-button]="plan.popular"
               [class.secondary-button]="!plan.popular"
+              (click)="openApp()"
             >
               {{ plan.ctaKey | translate }}
             </button>

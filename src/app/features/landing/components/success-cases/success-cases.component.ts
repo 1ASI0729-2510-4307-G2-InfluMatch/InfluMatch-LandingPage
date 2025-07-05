@@ -38,13 +38,18 @@ declare var AOS: any;
     TranslateModule,
     RouterModule,
   ],
+  
   templateUrl: './success-cases.component.html',
   styleUrls: ['./success-cases.component.scss'],
 })
 export class SuccessCasesComponent implements OnInit, AfterViewInit {
   cases: SuccessCase[] = [];
   brands: Brand[] = [];
+  readonly appUrl = 'https://happy-stone-091814410.6.azurestaticapps.net/';
 
+   openApp(): void {
+    window.open(this.appUrl, '_blank');
+  }
   ngOnInit(): void {
     this.initializeCases();
     this.initializeBrands();
@@ -62,7 +67,7 @@ export class SuccessCasesComponent implements OnInit, AfterViewInit {
       });
     }
   }
-
+  
   private initializeCases(): void {
     this.cases = [
       {

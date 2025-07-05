@@ -25,6 +25,22 @@ export class FooterComponent implements OnInit, OnDestroy {
     private translate: TranslateService
   ) {}
 
+  readonly appUrl = 'https://www.facebook.com';
+
+   openApp(): void {
+    window.open(this.appUrl, '_blank');
+  }
+  readonly appUrl1 = 'https://x.com/?lang=es';
+
+   openApp1(): void {
+    window.open(this.appUrl1, '_blank');
+  }
+    readonly appUrl2 = 'https://www.instagram.com/';
+
+   openApp2(): void {
+    window.open(this.appUrl2, '_blank');
+  }
+
   ngOnInit(): void {
     // Initialize theme state
     this.isDark = this.themeService.isDark();
