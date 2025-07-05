@@ -71,6 +71,13 @@ export class HeaderComponent implements OnInit, OnDestroy {
       exact: false,
       icon: 'mail_outline',
     },
+    {
+      label: 'HEADER.ABOUT',
+      route: '/',
+      section: 'about',
+      exact: false,
+      icon: 'info_outline',
+    },
   ];
 
   constructor(

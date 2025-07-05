@@ -1,0 +1,51 @@
+<section class="about-section" id="about">
+  <div class="container">
+    <!-- Header -->
+    <div class="section-header" data-aos="fade-up">
+      <span class="overline">{{ "ABOUT.OVERLINE" | translate }}</span>
+      <h2 class="section-title">{{ "ABOUT.TITLE" | translate }}</h2>
+      <p class="section-subtitle">{{ "ABOUT.SUBTITLE" | translate }}</p>
+    </div>
+
+    <!-- About Content -->
+    <div class="about-content">
+      <!-- About Product -->
+      <div class="about-card" data-aos="fade-up">
+        <div class="about-card-content">
+          <h3>{{ "ABOUT.PRODUCT_TITLE" | translate }}</h3>
+          <p class="about-description">{{ "ABOUT.PRODUCT_DESCRIPTION" | translate }}</p>
+          
+          <div class="video-container">
+            <iframe 
+              width="100%" 
+              height="400" 
+              [src]="productVideoUrl | safe" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+      </div>
+
+      <!-- About Team -->
+      <div class="about-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="about-card-content">
+          <h3>{{ "ABOUT.TEAM_TITLE" | translate }}</h3>
+          <p class="about-description">{{ "ABOUT.TEAM_DESCRIPTION" | translate }}</p>
+          
+          <div class="video-container">
+            <iframe 
+              width="100%" 
+              height="400" 
+              [src]="teamVideoUrl | safe" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

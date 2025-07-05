@@ -12,6 +12,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ThemeService } from '../../core/services/theme.service';
 import { HeroComponent } from './components/hero/hero.component';
+import { AboutComponent } from './components/about/about.component'; // Assuming you have an AboutComponent
 
 @Component({
   selector: 'app-landing',
@@ -27,6 +28,7 @@ import { HeroComponent } from './components/hero/hero.component';
     PlansComponent,
     ContactComponent,
     FooterComponent,
+    AboutComponent,
   ],
   templateUrl: './landing.component.html',
   styleUrls: ['./landing.component.scss'],
